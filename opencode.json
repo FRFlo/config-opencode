@@ -7,7 +7,6 @@
     "opencode-cursor-auth",
     "oh-my-openagent",
     "@slkiser/opencode-quota",
-    "opencode-snip",
     "opencode-move-tool",
   ],
   "mcp": {
