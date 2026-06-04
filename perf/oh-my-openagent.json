@@ -1,0 +1,149 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini"
+        }
+      ]
+    },
+    "hephaestus": {
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "oracle": {
+      "model": "openai/gpt-5.4-mini",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "librarian": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": []
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": []
+    },
+    "multimodal-looker": {
+      "model": "openai/gpt-5.4-mini",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "prometheus": {
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "metis": {
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "momus": {
+      "model": "openai/gpt-5.4-mini",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "atlas": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini"
+        }
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": []
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "openai/gpt-5.4-mini",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "ultrabrain": {
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "deep": {
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "artistry": {
+      "model": "openai/gpt-5.4-mini",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "quick": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": []
+    },
+    "unspecified-low": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": []
+    },
+    "unspecified-high": {
+      "model": "openai/gpt-5.4-mini",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    },
+    "writing": {
+      "model": "openai/gpt-5.4-mini",
+      "fallback_models": [
+        {
+          "model": "openai/gpt-5.4-mini-fast"
+        }
+      ]
+    }
+  },
+  "git_master": {
+    "commit_footer": false,
+    "include_co_authored_by": false,
+    "git_env_prefix": "GIT_MASTER=1"
+  }
+}
