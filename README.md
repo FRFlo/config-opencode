@@ -21,4 +21,10 @@ Downloads both JSON config files into `%USERPROFILE%\.config\opencode\`.
 curl -fsSL https://github.com/FRFlo/config-opencode/raw/refs/heads/develop/setup.sh | bash
 ```
 
-Downloads both JSON config files into `$HOME/.config/opencode/`.
+Backs up any existing OpenCode / Oh My OpenAgent config found in known macOS/Linux locations, then installs both JSON config files into:
+
+- `$HOME/.opencode/`
+- `$XDG_CONFIG_HOME/opencode/` or `$HOME/.config/opencode/`
+- `$HOME/.opencode/config/`
+
+Backups are stored under `$HOME/.opencode-config-backups/<timestamp>-<pid>/`.
