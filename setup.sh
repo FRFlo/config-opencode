@@ -4,8 +4,8 @@
 
 set -euo pipefail
 
-BASE_URL="${BASE_URL:-https://github.com/FRFlo/config-opencode/raw/refs/heads/develop}"
-FILES=("opencode.json" "oh-my-openagent.json")
+BRANCH="${BRANCH:-develop}"
+ZIP_URL="https://github.com/FRFlo/config-opencode/archive/refs/heads/$BRANCH.zip"
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 PRIMARY_DIR="$HOME/.opencode"
@@ -54,45 +54,36 @@ backup_existing_file() {
   echo "Backed up existing config: $src -> $dest"
 }
 
-download_file() {
-  local file="$1"
-  local url="$BASE_URL/$file"
-  local staged="$STAGING_DIR/$file"
-
-  echo "Downloading: $url"
-  curl -fsSL "$url" -o "$staged"
-  echo "  -> staged $file"
-}
-
-install_file() {
-  local file="$1"
-  local dir="$2"
-  local src="$STAGING_DIR/$file"
-  local dest="$dir/$file"
-
+install_directory() {
+  local dir="$1"
+  
   mkdir -p "$dir"
-  cp "$src" "$dest"
-  echo "Installed: $dest"
+  cp -R "$extracted_root/"* "$dir/"
+  echo "Installed config files to: $dir"
 }
 
 echo "Preparing OpenCode configuration replacement..."
 echo "Primary target: $PRIMARY_DIR"
 echo "Compatibility targets: $XDG_DIR, $LEGACY_PLUGIN_DIR"
 
-for file in "${FILES[@]}"; do
-  download_file "$file"
-done
+echo "Downloading: $ZIP_URL"
+curl -fsSL "$ZIP_URL" -o "$STAGING_DIR/repo.zip"
 
-echo "All config files downloaded successfully. Replacing existing configs..."
+echo "Extracting archive..."
+unzip -q "$STAGING_DIR/repo.zip" -d "$STAGING_DIR"
+
+extracted_root=$(find "$STAGING_DIR" -mindepth 1 -maxdepth 1 -type d)
+rm -f "$extracted_root/setup.sh" "$extracted_root/setup.ps1" "$extracted_root/README.md"
+rm -f "$extracted_root/repo.zip"
+
+echo "Replacing existing configs..."
 
 for existing in "${KNOWN_CONFIG_FILES[@]}"; do
   backup_existing_file "$existing"
 done
 
 for dir in "${TARGET_DIRS[@]}"; do
-  for file in "${FILES[@]}"; do
-    install_file "$file" "$dir"
-  done
+  install_directory "$dir"
 done
 
 echo ""
