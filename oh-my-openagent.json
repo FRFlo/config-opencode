@@ -22,7 +22,7 @@
       "variant": "high",
       "fallback_models": [
         {
-          "model": "google/gemini-3.1-pro-preview",
+          "model": "google/antigravity-gemini-3.1-pro",
           "variant": "high"
         },
         {
@@ -32,17 +32,17 @@
       ]
     },
     "librarian": {
-      "model": "openai/gpt-5.4-mini-fast"
+      "model": "openai/gpt-5.4-mini"
     },
     "explore": {
-      "model": "openai/gpt-5.4-mini-fast"
+      "model": "openai/gpt-5.4-mini"
     },
     "multimodal-looker": {
       "model": "openai/gpt-5.5",
       "variant": "medium",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.4-mini-fast"
+          "model": "openai/gpt-5.4-mini"
         },
         {
           "model": "openai/gpt-5.4-mini"
@@ -59,7 +59,7 @@
           "variant": "high"
         },
         {
-          "model": "google/gemini-3.1-pro-preview"
+          "model": "google/antigravity-gemini-3.1-pro"
         }
       ],
       "prompt_append": "Always ask the user question using the question tool to cover every blind spots."
@@ -83,7 +83,7 @@
           "variant": "max"
         },
         {
-          "model": "google/gemini-3.1-pro-preview",
+          "model": "google/antigravity-gemini-3.1-pro",
           "variant": "high"
         }
       ]
@@ -101,7 +101,7 @@
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/gemini-3.1-pro-preview",
+      "model": "google/antigravity-gemini-3.1-pro",
       "variant": "high",
       "fallback_models": [
         {
@@ -115,7 +115,7 @@
       "variant": "xhigh",
       "fallback_models": [
         {
-          "model": "google/gemini-3.1-pro-preview",
+          "model": "google/antigravity-gemini-3.1-pro",
           "variant": "high"
         },
         {
@@ -133,13 +133,13 @@
           "variant": "max"
         },
         {
-          "model": "google/gemini-3.1-pro-preview",
+          "model": "google/antigravity-gemini-3.1-pro",
           "variant": "high"
         }
       ]
     },
     "artistry": {
-      "model": "google/gemini-3.1-pro-preview",
+      "model": "google/antigravity-gemini-3.1-pro",
       "variant": "high",
       "fallback_models": [
         {
@@ -158,30 +158,30 @@
           "model": "google/antigravity-claude-sonnet-4-6"
         },
         {
-          "model": "google/gemini-3-flash-preview"
+          "model": "google/antigravity-gemini-3-flash"
         }
       ]
     },
     "unspecified-low": {
-      "model": "openai/gpt-5.3-codex",
+      "model": "openai/gpt-5.4",
       "variant": "medium",
       "fallback_models": [
         {
-          "model": "google/gemini-3-flash-preview"
+          "model": "google/antigravity-gemini-3-flash"
         }
       ]
     },
     "unspecified-high": {
-      "model": "openai/gpt-5.3-codex",
+      "model": "openai/gpt-5.4",
       "variant": "medium",
       "fallback_models": [
         {
-          "model": "google/gemini-3-flash-preview"
+          "model": "google/antigravity-gemini-3-flash"
         }
       ]
     },
     "writing": {
-      "model": "google/gemini-3-flash-preview"
+      "model": "google/antigravity-gemini-3-flash"
     }
   },
   "git_master": {
